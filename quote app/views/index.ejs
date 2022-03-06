@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+    margin:0;
+    padding:0;
+    line-height: 2.0;
+    font-family: 'PT Sans',sans-serif;
+  }
+  .navDiv{
+    height: 65px;
+    background-color: rgb(13, 114, 84);
+    display: flex;
+    justify-content: space-between;
+    padding-left: 100px;
+    padding-right: 100px;
+    color: white;
+}
+
+.navDiv1{
+    font-size: 40px;
+}
+
+.navParentDiv{
+    height: 10px;
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-around;
+    width: 220px;
+}
+
+.navBtn{
+    background-color: rgb(104, 158, 142);
+    border: none;
+    color: white;
+    font-size: 15px;
+}
+
+.mainDiv{
+    width: 550px;
+    height: 350px;
+    margin: auto;
+    margin-top: 100px;
+    
+    
+}
+
+.quoteDiv{
+    margin-top: 5px;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(42, 201, 153);
+    border: 1px solid black;
+    border-radius: 10px;
+    
+}
+li{
+display: flex;
+justify-content: space-between;
+padding-left: 5px;
+}
+.buttonDiv{
+    width: 20%;
+    display: flex;
+    margin-top: 15px;
+    justify-content: space-between;
+    margin-right: 10px;
+}
+
+.Bttn{
+    border: none;
+    background-color: rgb(13, 114, 84);
+    font-size: 12px;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 5px;
+}
+       
+    
+    </style>
+</head>
+<body>
+    <div class="navDiv">
+        <div class="navDiv1">Great Quotes</div>
+        <div class ="navParentDiv">
+          <div><a class="navBtn" href="/quotes" >All quote</a></div>
+          <div><a class="navBtn" href="/quotes/new">Add a quote</a></div>
+        </div>
+      </div>
+   
+
+   
+    <div class="mainDiv">
+        <ul>
+      
+            <% for(let quote of quotes){ %> 
+                <div class="quoteDiv">
+                <li >
+                    <div >
+                    <h3><%= quote.description %> </h3>
+                    <p><i><%= quote.name %></i> </p>
+                    </div>
+                    <div class="buttonDiv">
+                    <div>
+                    <a href="/quotes/<%= quote._id %> "><button class="Bttn">View</button></a><br>
+                    </div>
+                    <div>
+                    <form action="/quotes/<%= quote._id %>?_method=DELETE" method="POST">
+                        <button class="Bttn" id="delete" type="submit">Delete</button>
+                    </form>
+                </div>
+                    </div>
+                </li>
+                
+            </div>
+    
+            <% } %> 
+        </ul>
+    </div>
+</body>
+</html>

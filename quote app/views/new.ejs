@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Quote</title>
+    <style>
+          *{
+    margin:0;
+    padding:0;
+    line-height: 2.0;
+    font-family: 'PT Sans',sans-serif;
+  }
+  .navDiv{
+    height: 65px;
+    background-color: rgb(13, 114, 84);
+    display: flex;
+    justify-content: space-between;
+    padding-left: 100px;
+    padding-right: 100px;
+    color: white;
+}
+
+.navDiv1{
+    font-size: 40px;
+}
+
+.navParentDiv{
+    height: 10px;
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-around;
+    width: 220px;
+}
+
+.navBtn{
+    background-color: rgb(13, 114, 84);
+    border: none;
+    color: white;
+    font-size: 15px;
+}
+
+.mainDiv{
+    border: 1px solid black;
+    width: 350px;
+    height: 350px;
+    margin:auto ;
+    margin-top: 100px;
+    padding-left: 10%;
+    background-color:rgb(104, 158, 142);
+    border-radius: 5px;
+    padding-top:20px ;
+}
+.Bttn{
+    border: none;
+    background-color: rgb(13, 114, 84);
+    font-size: 12px;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 5px;
+}
+       
+    </style>
+
+</head>
+<body>
+    
+    <div class="navDiv">
+        <div class="navDiv1">Great Quotes</div>
+        <div class ="navParentDiv">
+          <div><a class="navBtn" href="/quotes" >All quote</a></div>
+          <div><a class="navBtn" href="/quotes/new">Add a quote</a></div>
+        </div>
+      </div>
+<div class="mainDiv">
+    <form action="/quotes" method="POST">
+    
+            <label for="namw"><h2>Name :</h2></label>
+            <input type="text" name="name" id="name" placeholder="Name">
+            <br>
+            <label for="description"><h2>Quote :</h2></label>
+            <textarea name="description" id="description" cols="30" rows="3"></textarea><br>
+        <button type="submit" class="Bttn">Add Quote</button>
+    </form>
+</div>
+</body>
+</html>
